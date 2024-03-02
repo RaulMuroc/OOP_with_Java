@@ -7,7 +7,10 @@ public class FarenheitToCelsiusWithScanner
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a Farenheit value: ");
         int Farenheit = input.nextInt();
+        System.out.print("Enter a day of the week: ");
+        String day = input.next();
         double celsius = (5.0/9) * (Farenheit -32);
-        System.out.println("Celsius: " + celsius);
+        System.out.println(day + " Farenheit: " + Farenheit);
+        System.out.println(day + " Celsius: " + celsius);
     }
 }

@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 public class FarenheitToCelsius 
 {
     public static void main (String[] args)
-    {
+    {//Scanner input = new Scanner(System.in);
         int saturdayFahrenheit;
         int sundayFahrenheit;
         saturdayFahrenheit = 78;

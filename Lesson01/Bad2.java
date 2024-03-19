@@ -1,3 +1,5 @@
+package Lesson01;
+
 public class Bad2 {
     public static void main(String[] args) {
         int a = 1331;

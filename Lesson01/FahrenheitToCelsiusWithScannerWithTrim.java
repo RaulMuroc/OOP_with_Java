@@ -1,6 +1,9 @@
+package Lesson01;
+
 import java.util.Scanner;
 public class FahrenheitToCelsiusWithScannerWithTrim {
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a Fahrenheit value and the day of the week: ");
         int fahrenheit = input.nextInt();

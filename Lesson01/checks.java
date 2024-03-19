@@ -1,3 +1,5 @@
+package Lesson01;
+
 public class checks 
 {
     public static void main (String[] args)

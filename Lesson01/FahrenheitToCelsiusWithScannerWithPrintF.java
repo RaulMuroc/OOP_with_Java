@@ -1,6 +1,9 @@
+package Lesson01;
+
 import java.util.Scanner;
 public class FahrenheitToCelsiusWithScannerWithPrintF {
     public static void main(String[] args) {
+        @SuppressWarnings("resource")
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a Fahrenheit value: ");
         int fahrenheit = input.nextInt();

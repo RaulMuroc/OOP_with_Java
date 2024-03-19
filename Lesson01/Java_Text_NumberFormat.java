@@ -1,11 +1,13 @@
+package Lesson01;
+
 import java.util.Scanner;
-import java.util.Locale;
 import java.text.NumberFormat;
 
 public class Java_Text_NumberFormat {
     public static void main(String[] args) {
         int items;
         double itemCost, total;
+        @SuppressWarnings("resource")
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number of items: ");
         items = input.nextInt();

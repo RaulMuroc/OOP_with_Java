@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package Lesson01;
 
 public class FarenheitToCelsius 
 {

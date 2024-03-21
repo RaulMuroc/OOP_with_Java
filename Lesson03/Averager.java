@@ -1,4 +1,4 @@
-package Lesson03;
+
 
 public class Averager {
     public static void main(String[] args) {

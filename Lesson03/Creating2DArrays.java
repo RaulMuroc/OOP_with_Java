@@ -1,4 +1,4 @@
-package Lesson03;
+
 
 public class Creating2DArrays {
     @SuppressWarnings("unused")

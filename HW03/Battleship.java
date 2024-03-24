@@ -19,30 +19,30 @@ public class Battleship {
         while (numPlayers > 0) {
             boolean loopForShipsFailed = false;
             System.out.println("PLAYER " + currPlayer + ", ENTER YOUR SHIPS' COORDINATES.");
-            // int row = 0;
-            // int col = 0;
+             int posRow = 0;
+             int posCol = 0;
             while (numShips > 0) { 
 
                 System.out.println("Enter ship " + currShip + " location:");
-                //boolean stillInt = true;
-                boolean stillInt = true;
-                while(stillInt) {
-                    for(int col = 0; col++; col < 3) {
-                        for(int row = 0; row++; row < 3) {
+                while(!loopForShipsFailed) {
+                    // row
                     if (!Scanner.hasNextInt()) {
-                        stillInt = false;
-                        loopForShipsFailed = true;
+                       loopForShipsFailed = true;
                     } else {
                         row = Scanner.nextInt();
                     }
+                    // col
                     if (!Scanner.hasNextInt()) {
-                        stillInt = false;
-                        loopForShipsFailed = true;
+                    loopForShipsFailed = true;
                     } else {
                         col = Scanner.nextInt();
                     }
-                    positionShipsPlayer1 = 
-                }
+                    positionShipsPlayer1[][] = row;
+                    positionShipsPlayer1[][] = col;
+            }
+                    
+                   
+            
                 if (!stillInt) { 
                     System.out.println("Invalid coordinates. Choose different coordinates.");
                     break;

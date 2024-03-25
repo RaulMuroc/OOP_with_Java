@@ -42,7 +42,7 @@ public class Battleship {
                 int col = 0;
 
             System.out.println("Enter ship " + currShip2 + " location:");  
-                while (!Scanner.hasNextInt() || row > 4 || col || > 4 || row < 0 || col < 0) {
+                while (!Scanner.hasNextInt() || row > 4 || col || > 4 || row < 0 || col < 0) { 
                     System.out.println("Invalid coordinates. Choose different coordinates.");
                     Scanner.next();
                 } 

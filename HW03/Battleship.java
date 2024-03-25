@@ -19,34 +19,40 @@ public class Battleship {
         while (numPlayers > 0) {
             boolean loopForShipsFailed = false;
             System.out.println("PLAYER " + currPlayer + ", ENTER YOUR SHIPS' COORDINATES.");
-            // int row = 0;
-            // int col = 0;
             while (numShips > 0) { 
+                 int row = 0;
+                 int col = 0;
 
                 System.out.println("Enter ship " + currShip + " location:");
                 //boolean stillInt = true;
-                boolean stillInt = true;
-                while(stillInt) {
-                    for(int col = 0; col++; col < 3) {
-                        for(int row = 0; row++; row < 3) {
+                //boolean stillInt = true;
+                //while(stillInt) {
+                    // for(int col = 0; col++; col < 3) {
+                    //     for(int row = 0; row++; row < 3) {
+                    
+                    // if (!stillInt) { 
+                    //     System.out.println("Invalid coordinates. Choose different coordinates.");
+                    //     break;
+                    // }    
                     if (!Scanner.hasNextInt()) {
-                        stillInt = false;
-                        loopForShipsFailed = true;
+                        System.out.println("Invalid coordinates. Choose different coordinates.");
+                        break;
+                        //stillInt = false;
+                        //loopForShipsFailed = true;
                     } else {
                         row = Scanner.nextInt();
                     }
                     if (!Scanner.hasNextInt()) {
-                        stillInt = false;
-                        loopForShipsFailed = true;
+                        // stillInt = false;
+                        // loopForShipsFailed = true;
+                        System.out.println("Invalid coordinates. Choose different coordinates.");
+                        break;
                     } else {
                         col = Scanner.nextInt();
                     }
-                    positionShipsPlayer1 = 
-                }
-                if (!stillInt) { 
-                    System.out.println("Invalid coordinates. Choose different coordinates.");
-                    break;
-                }
+                    positionShipsPlayer1[row][col] = '@';
+                //}
+                
                 // while (!Scanner.hasNextInt()) {
                 //     System.out.println("Invalid coordinates. Choose different coordinates.");
                 // }

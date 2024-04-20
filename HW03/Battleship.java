@@ -207,7 +207,6 @@ public class Battleship {
 
     private static char[][] attackWithPassedCoordinatesTrack(int row, int col, char[][] boardToUpdate, char[][] boardToRead) {
         char readValue = boardToRead[row][col];
-        char currValue = boardToUpdate[row][col];
         if (readValue == '@') {
             boardToUpdate[row][col] = 'X';
         } else {

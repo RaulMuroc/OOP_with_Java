@@ -58,6 +58,7 @@ public class Battleship {
         printBattleShip(p2HistoryBoard);
         Add100Newlines();
         boolean firstAccess= true;
+        boolean isNoResult = false;
 
         // loop between players until a winner is reached
         boolean winner = false;
@@ -66,7 +67,7 @@ public class Battleship {
             boolean turnPlayer2 = false;
             while (turnPlayer1) {
                 // player 1 - attack
-                if (firstAccess) {
+                if (firstAccess || isNoResult) {
                     System.out.println("Player 1, enter hit row/column:");
                     firstAccess = false;
                 } else {
@@ -82,11 +83,11 @@ public class Battleship {
                 } 
                 boolean result = checkPassedCoordinates(row, col, p1TrackingBoard, p2HistoryBoard, 1, 2);
                 if (!result) {
-                    while (!result) {
-                        checkPassedCoordinates(row, col, p1TrackingBoard, p2HistoryBoard, 1, 2);
-                    }
+                    isNoResult = true;
+                    continue;
                 }
                 else {
+                   isNoResult = false;
                    p1TrackingBoard = attackWithPassedCoordinatesTrack(row, col, p1TrackingBoard, p2HistoryBoard);
                    p2HistoryBoard = attackWithPassedCoordinatesHistory(row, col, p2HistoryBoard);
                    printBattleShip(p1TrackingBoard);
@@ -105,26 +106,36 @@ public class Battleship {
                 }
             }
 
+            boolean isContinue = false;
+            boolean isNoResultP2 = false;
+
             while (turnPlayer2) {
                 // player 2 - attack
-                System.out.println("\nPlayer 2, enter hit row/column:");
+                if (isContinue || isNoResultP2) {
+                    System.out.println("Player 2, enter hit row/column:");
+                }
+                else 
+                {
+                    System.out.println("\nPlayer 2, enter hit row/column:");
+                }
                 int row = Scanner.nextInt();
                 int col = Scanner.nextInt();
                 if (!checkCoordinates(row, col)) {
                     System.out.println("Invalid coordinates. Choose different coordinates.");
                     //irstAccess = true; 
-                    //continue;
+                    isContinue = true;
+                    continue;
                 }
+                isContinue = false;
                 boolean result = checkPassedCoordinates(row, col, p2TrackingBoard, p1HistoryBoard, 2, 1);
                 if (!result) {
-                    while (!result) {
-                        checkPassedCoordinates(row, col, p2TrackingBoard, p1HistoryBoard, 2, 1);
-                    }
+                    isNoResultP2 = true;
+                    continue;
                 }
                 else {
+                    isNoResultP2 = false;
                    p2TrackingBoard = attackWithPassedCoordinatesTrack(row, col, p2TrackingBoard, p1HistoryBoard);
                    p1HistoryBoard = attackWithPassedCoordinatesHistory(row, col, p1HistoryBoard);
-                   //System.out.println();
                    printBattleShip(p2TrackingBoard);
                    if (!checkBoard(p1HistoryBoard)) {
                         winningPlayer(2, p1HistoryBoard, p2HistoryBoard);

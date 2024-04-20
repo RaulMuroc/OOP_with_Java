@@ -110,5 +110,6 @@ alphabetize - takes two words (without spaces) and tells which word comes before
             default:
                 break;
         }
+        Scanner.close();
     }
 }

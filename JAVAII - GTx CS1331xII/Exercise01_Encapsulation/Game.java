@@ -1,4 +1,4 @@
-package Exercise01;
+package Exercise01_Encapsulation;
 
 import java.util.Arrays;
 

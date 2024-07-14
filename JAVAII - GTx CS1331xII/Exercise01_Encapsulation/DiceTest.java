@@ -1,4 +1,4 @@
-package Exercise01;
+package Exercise01_Encapsulation;
 
 public class DiceTest {
     public static void main(String[] args) {

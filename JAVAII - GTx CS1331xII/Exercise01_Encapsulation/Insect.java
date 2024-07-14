@@ -1,3 +1,5 @@
+package Exercise01_Encapsulation;
+
 public class Insect {
     private double weight;
     private int x;

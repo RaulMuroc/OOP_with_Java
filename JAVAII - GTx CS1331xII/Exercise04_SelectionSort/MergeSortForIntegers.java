@@ -1,6 +1,6 @@
 package Exercise04_SelectionSort;
 
-public class MergeSort {
+public class MergeSortForIntegers {
 
     // the mergeSort method itself 
     public static int[] mergeSort(int[] list, int start, int end) {

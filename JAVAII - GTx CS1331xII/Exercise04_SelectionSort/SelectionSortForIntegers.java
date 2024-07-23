@@ -26,6 +26,9 @@ public class SelectionSortForIntegers {
     }
     public static void main(String[] args) {
         int[] test = {3,9,6,1,2};
+        long start = System.nanoTime(); // performance analysis -- start
         SelectionSort(test);
+        long end = System.nanoTime(); // performance analysis -- end
+        System.out.println("Elapsed time in ns:" + (end - start));
     }
 }

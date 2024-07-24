@@ -14,10 +14,11 @@ public class SelectionSortForIntegers {
                     minIndex = currIndex;
                 }
             }
-
-            nextSmallest = list[minIndex];
-            list[minIndex] = list[unsortedStart];
-            list[unsortedStart] = nextSmallest;
+            if (minIndex != unsortedStart) {
+                nextSmallest = list[minIndex];
+                list[minIndex] = list[unsortedStart];
+                list[unsortedStart] = nextSmallest;
+            }
         }
         // final check if ordered array is correct
         for (int i : list) {

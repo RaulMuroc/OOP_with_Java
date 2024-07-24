@@ -14,18 +14,20 @@ public class SelectionSortForComparable {
                     minIndex = currIndex;
                 }
             }
-
-            nextSmallest = list[minIndex];
-            list[minIndex] = list[unsortedStart];
-            list[unsortedStart] = nextSmallest;
+            if (minIndex != unsortedStart) {
+                nextSmallest = list[minIndex];
+                list[minIndex] = list[unsortedStart];
+                list[unsortedStart] = nextSmallest;
+            }
         }
         // final check if ordered array is correct
-        for (int i : list) {
+        for (Comparable i : list) {
             System.out.println(" i in ordered: " + i);
         }
     }
     public static void main(String[] args) {
-        int[] test = {3,9,6,1,2};
+        //int[] test = {3,9,6,1,2};
+        Comparable[] test = new Comparable[]{3,0,6,1,2};
         SelectionSort(test);
     }
 }

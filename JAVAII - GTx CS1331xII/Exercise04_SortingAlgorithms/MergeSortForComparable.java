@@ -1,17 +1,17 @@
-package Exercise04_SelectionSort;
+package Exercise04_SortingAlgorithms;
 
-public class MergeSortForIntegers {
+public class MergeSortForComparable {
 
     // the mergeSort method itself 
-    public static int[] mergeSort(int[] list, int start, int end) {
-        int[] test2 = {};
+    public static Comparable[] mergeSort(Comparable[] list, int start, int end) {
+        Comparable[] test2 = {};
         if (start == end) {
             return test2;
         } else if (start == end-1) {
-            if (list[start] <= list[end]) {
+            if (list[start].compareTo(list[end]) <= 0) {
                 return test2;
             } else { // swap
-                int temp = list[start];
+                Comparable temp = list[start];
                 list[start] = list[end];
                 list[end] = temp;
             }
@@ -25,12 +25,12 @@ public class MergeSortForIntegers {
     }   
     
     // a helper method that represents the incremental (and repeated) process of merging two sublists
-    private static void merge(int[] list, int leftHalfStart, int rightHalfStart, int end) {
+    private static void merge(Comparable[] list, int leftHalfStart, int rightHalfStart, int end) {
         int leftHalfSize = rightHalfStart - leftHalfStart + 1;
         int rightHalfSize = end - rightHalfStart;
     
-        int[] leftHalf = new int[leftHalfSize];
-        int[] rightHalf = new int[rightHalfSize];
+        Comparable[] leftHalf = new Comparable[leftHalfSize];
+        Comparable[] rightHalf = new Comparable[rightHalfSize];
     
         for (int i=0; i<leftHalfSize; ++i)
             leftHalf[i] = list[leftHalfStart + i];
@@ -42,7 +42,7 @@ public class MergeSortForIntegers {
     
         int k = leftHalfStart;
         while (i < leftHalfSize && j < rightHalfSize) {
-            if (leftHalf[i] <= rightHalf[j]) {
+            if (leftHalf[i].compareTo(rightHalf[j]) < 0) {
                 list[k] = leftHalf[i];
                 i++;
             } else {
@@ -66,10 +66,10 @@ public class MergeSortForIntegers {
     }
 
     public static void main(String[] args) {
-        int[] test = {4,6,8,1,2,9};
-        int[] result;
+        Comparable[] test = new Comparable[]{3,6,8,1,2,9};
+        Comparable[] result;
         result = mergeSort(test, 0, test.length - 1);
-        for (int i : result) {
+        for (Comparable i : result) {
             System.out.println(" i in ordered: " + i);
         }
     }

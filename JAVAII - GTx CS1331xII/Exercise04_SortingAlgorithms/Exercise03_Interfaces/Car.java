@@ -1,4 +1,4 @@
-package Exercise03_Interfaces;
+package Exercise04_SortingAlgorithms.Exercise03_Interfaces;
 
 public class Car implements Groomable {
     private String make;

@@ -1,17 +1,17 @@
-package Exercise04_SelectionSort;
+package Exercise04_SortingAlgorithms;
 
-public class MergeSortForComparable {
+public class MergeSortForInt {
 
     // the mergeSort method itself 
-    public static Comparable[] mergeSort(Comparable[] list, int start, int end) {
-        Comparable[] test2 = {};
+    public static int[] mergeSort(int[] list, int start, int end) {
+        int[] test2 = {};
         if (start == end) {
             return test2;
         } else if (start == end-1) {
-            if (list[start].compareTo(list[end]) <= 0) {
+            if (list[start] <= list[end]) {
                 return test2;
             } else { // swap
-                Comparable temp = list[start];
+                int temp = list[start];
                 list[start] = list[end];
                 list[end] = temp;
             }
@@ -25,12 +25,12 @@ public class MergeSortForComparable {
     }   
     
     // a helper method that represents the incremental (and repeated) process of merging two sublists
-    private static void merge(Comparable[] list, int leftHalfStart, int rightHalfStart, int end) {
+    private static void merge(int[] list, int leftHalfStart, int rightHalfStart, int end) {
         int leftHalfSize = rightHalfStart - leftHalfStart + 1;
         int rightHalfSize = end - rightHalfStart;
     
-        Comparable[] leftHalf = new Comparable[leftHalfSize];
-        Comparable[] rightHalf = new Comparable[rightHalfSize];
+        int[] leftHalf = new int[leftHalfSize];
+        int[] rightHalf = new int[rightHalfSize];
     
         for (int i=0; i<leftHalfSize; ++i)
             leftHalf[i] = list[leftHalfStart + i];
@@ -42,7 +42,7 @@ public class MergeSortForComparable {
     
         int k = leftHalfStart;
         while (i < leftHalfSize && j < rightHalfSize) {
-            if (leftHalf[i].compareTo(rightHalf[j]) < 0) {
+            if (leftHalf[i] <= rightHalf[j]) {
                 list[k] = leftHalf[i];
                 i++;
             } else {
@@ -66,10 +66,10 @@ public class MergeSortForComparable {
     }
 
     public static void main(String[] args) {
-        Comparable[] test = new Comparable[]{3,6,8,1,2,9};
-        Comparable[] result;
+        int[] test = {4,6,8,1,2,9};
+        int[] result;
         result = mergeSort(test, 0, test.length - 1);
-        for (Comparable i : result) {
+        for (int i : result) {
             System.out.println(" i in ordered: " + i);
         }
     }

@@ -1,4 +1,4 @@
-package Exercise03_Interfaces;
+package Exercise04_SortingAlgorithms.Exercise03_Interfaces;
 
 public class Dog extends Canine {
     protected String name;

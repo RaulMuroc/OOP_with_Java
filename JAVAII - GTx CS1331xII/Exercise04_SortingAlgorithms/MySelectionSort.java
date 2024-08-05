@@ -1,4 +1,4 @@
-package Exercise04_SelectionSort;
+package Exercise04_SortingAlgorithms;
 
 public class MySelectionSort {
 

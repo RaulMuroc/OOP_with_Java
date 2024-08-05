@@ -1,16 +1,16 @@
-package Exercise04_SelectionSort;
+package Exercise04_SortingAlgorithms;
 
-public class SelectionSortForComparable {
+public clSelectionSortForIntgers {
 
-    public static void SelectionSort(Comparable[] list) {
+    public static void SelectionSort(int[] list) {
         
         int minIndex;
-        Comparable nextSmallest;
+        int nextSmallest;
 
         for (int unsortedStart = 0; unsortedStart < list.length-1; unsortedStart++) {
             minIndex = unsortedStart;
             for (int currIndex = unsortedStart+1; currIndex < list.length; currIndex++) {
-                if (list[currIndex].compareTo(list[minIndex]) < 0) {
+                if (list[currIndex] < list[minIndex]) {
                     minIndex = currIndex;
                 }
             }
@@ -21,13 +21,15 @@ public class SelectionSortForComparable {
             }
         }
         // final check if ordered array is correct
-        for (Comparable i : list) {
+        for (int i : list) {
             System.out.println(" i in ordered: " + i);
         }
     }
     public static void main(String[] args) {
-        //int[] test = {3,9,6,1,2};
-        Comparable[] test = new Comparable[]{3,0,6,1,2};
+        int[] test = {3,9,6,1,2};
+        long start = System.nanoTime(); // performance analysis -- start
         SelectionSort(test);
+        long end = System.nanoTime(); // performance analysis -- end
+        System.out.println("Elapsed time in ns:" + (end - start));
     }
 }

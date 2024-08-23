@@ -27,6 +27,7 @@ Hint: think of an easy way to do this without having to iterate through the enti
 Make sure to change the frozen variable of the player to true when voting off players (don’t call the freeze method!)
 At the end of the vote, check if the game is over using the provided method in Player.java
 Does not return anything
+
 freeze(Player p)
 Implements the method provided in the Impostor interface.
 It is not possible to freeze another Impostor, and an Impostor that is frozen cannot attempt to freeze. If the passed in Player is an Impostor, the method should end. Freezing an already frozen Player should also do nothing.
@@ -35,12 +36,14 @@ If the freeze is unsuccessful, the RedAstronaut’s susLevel doubles (multiply t
 Remember to change the frozen boolean value for the Crewmate as needed.
 After the freeze attempt, check if the game is over using the provided method in Player.java
 Does not return anything
+
 sabotage(Player p)
 It is not possible to sabotage another Impostor, and an Impostor that is frozen cannot sabotage. Also, sabotaging a frozen Player should do nothing.
 If the Impostor’s susLevel is under 20, through shifty maneuvers and cunning words, they are able to increase the Crewmate’s susLevel by 50%
 Otherwise, they can only manage to increase the Crewmate’s susLevel by 25%
 (Note: In both cases, the the Crewmate’s susLevel is rounded down to the nearest int value)
 Does not return anything
+
 equals(Object o)
 Two Red are equal if they both have the same name, frozen, susLevel, and skill
 Returns a boolean

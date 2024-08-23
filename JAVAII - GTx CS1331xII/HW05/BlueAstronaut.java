@@ -27,6 +27,7 @@ Hint: think of an easy way to do this without having to iterate through the enti
 Make sure to change the frozen variable of the player to true when voting off players (don’t call freeze!)
 At the end of the vote, check if the game is over using the provided method in Player.java
 Does not return anything
+
 completeTask()
 A BlueAstronaut that is frozen cannot complete tasks.
 If taskSpeed is greater than 20, subtract 2 from numTasks. Otherwise, subtract 1 from numTasks.
@@ -38,6 +39,7 @@ Does not return anything.
 equals(Object o)
 Two BlueAstronauts are equal if they both have the same name, frozen, susLevel, numTasks, and taskSpeed
 Returns a boolean
+
 toString() - returns a String describing BlueAstronaut as follows:
 "My name is [name], and I have a suslevel of [susLevel]. I am currently (frozen / not frozen). I have [numTasks] left over.”
 If susLevel is greater than 15, return the String in all capital letters.

@@ -1,3 +1,5 @@
+package HW05;
+
 public interface Impostor {
 
     /*

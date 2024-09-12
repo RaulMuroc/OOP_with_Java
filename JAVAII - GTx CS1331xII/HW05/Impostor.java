@@ -1,4 +1,4 @@
-public class Impostor {
+public interface Impostor {
 
     /*
      * Impostor.java

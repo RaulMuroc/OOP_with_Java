@@ -1,3 +1,5 @@
+package HW05;
+
 public class BlueAstronaut {
 /*
  * This file defines a BlueAstronaut, which is a Player and should have all attributes of one. Have BlueAstronaut implement the Crewmate interface.

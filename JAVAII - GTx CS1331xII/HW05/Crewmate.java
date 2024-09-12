@@ -1,3 +1,5 @@
+package HW05;
+
 public interface Crewmate {
 /*
  * This file defines an interface with the name Crewmate.

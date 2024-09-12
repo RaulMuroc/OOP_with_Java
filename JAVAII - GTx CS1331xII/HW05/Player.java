@@ -1,4 +1,4 @@
-package HW05;´
+package HW05;
 
 import java.io.*;
 import java.util.*;
@@ -102,10 +102,12 @@ public abstract class Player implements Comparable<Player> {
         int impostorCount = 0;
         int crewmateCount = 0;
         for (Player p : players) {
-            if (p instanceof Impostor && !p.frozen) {
-                impostorCount++;
-            } else if (p instanceof Crewmate && !p.frozen) {
-                crewmateCount++;
+            if (!p.frozen) {
+                if (p instanceof Impostor) {
+                    impostorCount++;
+                } else if (p instanceof Crewmate) {
+                    crewmateCount++;
+                }
             }
         }
         if (impostorCount == 0) {

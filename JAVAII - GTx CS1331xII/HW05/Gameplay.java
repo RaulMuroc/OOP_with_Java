@@ -1,3 +1,5 @@
+package HW05;
+
 public class Gameplay {
 /*
  * This Java file is a driver, meaning it will run the simulation. 

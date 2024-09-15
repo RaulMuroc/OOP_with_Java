@@ -1,16 +1,8 @@
 package HW05;
-
-import java.io.*;
-import java.util.*;
-
 public abstract class Player implements Comparable<Player> {
     private String name;        // the player's name as a String
     private int susLevel;       // how suspicious a Player is; the higher, the more suspicious
     private boolean frozen;     // if frozen or not, it affects their ability to participate in some methods below
-
-    // private constructor restricts instantiation
-    private Player() {
-    }
 
     // It's ok to move around elemnts of this array, but taking out Players or
     // manually adding them will result in errors.
@@ -53,7 +45,7 @@ public abstract class Player implements Comparable<Player> {
      */
     //YOUR CODE HERE
     protected void emergencyMeeting() {
-
+        
     }
 
     /**
@@ -202,4 +194,4 @@ Override the compareTo method (You should be able to put @Override on the line b
 Takes in a Player object and returns an int, adhering to the API contract (Comparable Interface)
 The method body should compare two Player objects based on the susLevel attribute. If the current Player instance’s susLevel is less than the Player passed in, return a negative number. If it is greater, return a positive number. If their susLevel attributes are equal, return 0
  */
-}
+

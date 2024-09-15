@@ -1,6 +1,12 @@
 package HW05;
 
-public class BlueAstronaut {
+public class BlueAstronaut extends Player implements Crewmate {
+
+    // constructor
+    public BlueAstronaut(String name, int susLevel) {
+        super(name, susLevel);
+    }
+    
 /*
  * This file defines a BlueAstronaut, which is a Player and should have all attributes of one. Have BlueAstronaut implement the Crewmate interface.
 

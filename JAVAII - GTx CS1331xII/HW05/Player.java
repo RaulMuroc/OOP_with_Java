@@ -43,10 +43,8 @@ public abstract class Player implements Comparable<Player> {
      * have an emergency meeting to vote on which Player to freeze.
      * Does not return anything
      */
-    //YOUR CODE HERE
-    protected void emergencyMeeting() {
-        
-    }
+    @Override
+    protected void emergencyMeeting() {}
 
     /**
      * This method is the compareTo method from the Comparable interface.
@@ -54,10 +52,15 @@ public abstract class Player implements Comparable<Player> {
      * @param p this method takes in a Player to compare values to
      * @return int this value will tell you the ordering of 2 Player objects
      */
+    @Override
     public int compareTo(Player p) {
-        // YOUR CODE HERE
-        
-        return 0; // delete this once you have implemented this method
+        if (this.susLevel < p.susLevel) {
+            return -1;
+        } else if (this.susLevel > p.susLevel) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     /**

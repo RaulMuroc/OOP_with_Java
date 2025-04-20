@@ -1,5 +1,5 @@
 package HW05;
-public abstract class Player implements Comparable<Player> {
+public abstract class Player implements Comparable {
     private String name;        // the player's name as a String
     private int susLevel;       // how suspicious a Player is; the higher, the more suspicious
     private boolean frozen;     // if frozen or not, it affects their ability to participate in some methods below

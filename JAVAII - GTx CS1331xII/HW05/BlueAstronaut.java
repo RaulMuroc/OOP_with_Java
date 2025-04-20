@@ -2,9 +2,81 @@ package HW05;
 
 public class BlueAstronaut extends Player implements Crewmate {
 
-    // constructor
-    public BlueAstronaut(String name, int susLevel) {
+    // initializations
+    private int numTasks;
+    private int taskSpeed;
+    private int susLevel;
+
+    // constructors
+    public BlueAstronaut(String name, int susLevel, int numTasks, int taskSpeed) {
         super(name, susLevel);
+        this.numTasks = numTasks;
+        this.taskSpeed = taskSpeed;
+    }
+
+    public BlueAstronaut(String name) {
+        this.susLevel = 15;
+        this.numTasks = 6;
+        this.taskSpeed = 10;
+    }
+
+    // getters
+    public int getNumTasks() {
+        return this.numTasks;
+    }
+
+    public int taskSpeed() {
+        return this.taskSpeed;
+    }
+
+    public int getSusLevel() {
+        return this.susLevel;
+    }
+
+    @Override 
+     protected void emergencyMeeting() {
+          if (!this.isFrozen()) {
+               Player[] players = getPlayers();
+               Player votedoff = players[0];
+               for (int i = 1; i < players.length; i++) {
+                    if (players[i-1].getSusLevel() < players[i].getSusLevel()) {
+                         votedoff = players[i];
+                    } else if (players[i-1].getSusLevel() == players[i].getSusLevel()) {
+                         continue;
+                    } 
+                    
+                    if (!this.equals(votedoff)) {
+                         votedoff.setFrozen((true));
+                    }
+               }
+               gameOver();
+          }
+     }
+
+    @Override
+    public void completeTask() {
+        if (!this.isFrozen()) {
+            if (this.taskSpeed > 20) {
+                this.numTasks -= 2;
+            } else {
+                this.numTasks -= 1;
+            }
+            if (this.numTasks == 0) {
+                System.out.println("I have completed all my tasks");
+                this.susLevel = (int)Math.floor(this.susLevel / 2);
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        //String outputFrozen = isFrozen() ? "frozen": "not frozen";
+        //String output = String.format("My Name is %s, and I have a suslevel of %d. I am currently %s. I am an skill %d player!", this.getName(), this.getSusLevel(), outputFrozen, this.getSkill());
+        if (this.getSusLevel() > 15) {
+             //output = output.toUpperCase();
+             return super.toString().toUpperCase();
+        }
+        return super.toString();
     }
     
 /*

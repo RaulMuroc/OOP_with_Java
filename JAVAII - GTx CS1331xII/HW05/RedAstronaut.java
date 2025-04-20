@@ -60,14 +60,10 @@ public class RedAstronaut extends Player implements Impostor, Comparable {
 
      @Override
      public void sabotage(Player p) {
-          if (p.isFrozen()) {
-               break;
-          }
-
-          if (!this.isFrozen()) {
+          if (!this.isFrozen() && !(p.isFrozen())) {
                Player[] players = getPlayers();
                if (this.getSusLevel() < 20) {
-                    p.setSusLevel(p.getSusLevel() + (p.getSusLevel() * 0.5));
+                    p.setSusLevel(p.getSusLevel() + ((int)Math.floor(p.getSusLevel() / 2)));
                }      
                else {
                     this.setSusLevel(this.getSusLevel() * 2);

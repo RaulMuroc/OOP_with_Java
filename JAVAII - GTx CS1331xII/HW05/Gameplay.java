@@ -1,55 +1,58 @@
 package HW05;
 
 public class Gameplay {
+    public static void main(String[] args) {
+
+        BlueAstronaut Bob = new BlueAstronaut("Bob", 20, 6, 30);
+        BlueAstronaut Heath = new BlueAstronaut("Heath", 30, 3, 21);
+        BlueAstronaut Albert = new BlueAstronaut("Albert", 44, 2, 0);
+        BlueAstronaut Angel = new BlueAstronaut("Angel", 0, 1, 0);
+
+        RedAstronaut Liam = new RedAstronaut("Liam", 19, "experienced");
+        RedAstronaut Suspicious = new RedAstronaut("Suspicious Person", 100, "expert");
+
+        Liam.sabotage(Bob);
+        String output = String.format("Bob suslevel: %d frozen %b", Bob.getSusLevel(), Bob.isFrozen());
+        System.out.println(output); // 30, false
+
+        Liam.freeze(Suspicious);
+        String output2 = String.format("Nothing changed -> Suspicions suslevel: %d frozen %b", Suspicious.getSusLevel(), Suspicious.isFrozen());
+        System.out.println(output2); // no change
+        
+        Liam.freeze(Albert);
+        String output3 = String.format("Albert suslevel: %d frozen %b", Albert.getSusLevel(), Albert.isFrozen());
+        System.out.println(output3); // 19, frozen
+
+        Albert.emergencyMeeting();
+        String output4 = String.format("Albert suslevel: %d frozen %b", Albert.getSusLevel(), Albert.isFrozen());
+        System.out.println(output4); // no change as he is frozen
+
+        Suspicious.emergencyMeeting();
+        String output5 = String.format("Suspicious suslevel: %d frozen %b", Suspicious.getSusLevel(), Suspicious.isFrozen());
+        System.out.println(output5); // tie between Bob and Heath, nothing happens
+
+        Bob.emergencyMeeting();
+        String output6 = String.format("Suspicious suslevel: %d frozen %b", Suspicious.getSusLevel(), Suspicious.isFrozen());
+        System.out.println(output6); // Suspicious person should have frozen true
+
+        Bob.emergencyMeeting();
+        String output7 = String.format("Suspicious suslevel: %d frozen %b", Suspicious.getSusLevel(), Suspicious.isFrozen());
+        System.out.println(output7); // Suspicious person should have frozen true
+        
+        Heath.completeTask();
+        String output8 = String.format("Heath numTasks: %d", Heath.getNumTasks());
+        System.out.println(output8); // Heath should have numTasks = 1
+
+        Heath.completeTask();
+        String output9 = String.format("Heath numTasks: %d", Heath.getNumTasks());
+        System.out.println(output9); // Heath should have numTasks = 1
+    }
 /*
  * This Java file is a driver, meaning it will run the simulation. 
  * You can also use it to test your code. 
  * Here are some basic tests to get you started with Amidst Us. 
  * These tests are by no means comprehensive, so be sure to create your own!
 
-This is just to show an example of object implementation to see how objects interact with each other. Feel free to play around with different values and method callings, especially using toString to check the values after every step! This will NOT be turned in.
-
-Create a BlueAstronaut with the following fields:
-name = “Bob”, susLevel = 20, numTasks = 6, taskSpeed = 30
-
-Create a BlueAstronaut with the following fields:
-name = “Heath”, susLevel = 30, numTasks = 3, taskSpeed = 21
-
-Create a BlueAstronaut with the following fields:
-name = “Albert”, susLevel = 44, numTasks = 2, taskSpeed = 0
-
-Create a BlueAstronaut with the following fields:
-name = “Angel”, susLevel = 0, numTasks = 1, taskSpeed = 0
-
-Create a RedAstronaut with the following fields:
-name = “Liam”, susLevel = 19, skill = "experienced"
-
-Create a RedAstronaut with the following fields:
-name = “Suspicious Person”, susLevel = 100, skill = "expert"
-
-Have the objects do the following:
-
-1.Have RedAstronaut Liam sabotage BlueAstronaut Bob. After the sabotage:
-Bob should have: susLevel = 30, frozen = false
-
-2.Have RedAstronaut Liam freeze RedAstronaut Suspicious Person:
-Nothing should happen
-
-3.Have RedAstronaut Liam freeze BlueAstronaut Albert. After the freeze:
-Liam should have: susLevel = 19
-Albert is now frozen
-
-4.Have BlueAstronaut Albert call an emergency meeting:
-Nothing should happen since he is frozen
-
-5.Have RedAstronaut Suspicious Person call an emergency meeting:
-This will result in a tie between Bob and Heath, so nothing should happen
-
-6.Have BlueAstronaut Bob call an emergency meeting:
-Suspicious Person should have: frozen = true
-
-7.Have BlueAstronaut Heath complete tasks:
-Heath should have: numTasks = 1
 
 8.Have BlueAstronaut Heath complete tasks:
 “I have completed all my tasks” should be printed to console
